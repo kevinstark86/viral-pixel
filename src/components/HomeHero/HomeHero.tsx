@@ -6,7 +6,7 @@ import { bgGradient } from 'src/utils/cssStyles';
 // hooks
 import useResponsive from 'src/hooks/useResponsive';
 // components
-import Image from 'src/components/image';
+import Image from "@/components/common/Image"
 import Iconify from "@/components/common/Iconify";
 
 // ----------------------------------------------------------------------
