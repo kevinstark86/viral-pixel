@@ -1,11 +1,12 @@
 // @mui
 import { useTheme } from '@mui/material/styles';
 import { Container } from '@mui/material';
+import Carousel from 'react-slick';
 // types
 import { IBrandProps } from "@/types/brand";
 // components
-import SvgColor from '@/components/common/SvgColor';
-import Carousel from '@/components/common/Carousel';
+import SvgColor from '@/components/common/SvgColor/SvgColor';
+//import Carousel from '@/components/common/Carousel';
 
 // ----------------------------------------------------------------------
 
