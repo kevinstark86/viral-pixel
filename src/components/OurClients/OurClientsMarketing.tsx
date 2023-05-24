@@ -5,7 +5,7 @@ import { Container } from '@mui/material';
 import { IBrandProps } from "@/types/brand";
 // components
 import SvgColor from '@/components/common/SvgColor';
-import Carousel from 'src/components/carousel';
+import Carousel from '@/components/common/Carousel';
 
 // ----------------------------------------------------------------------
 
@@ -37,7 +37,6 @@ export default function OurClientsMarketing({ brands }: Props) {
         ],
     };
 
-    // @ts-ignore
     return (
         <Container
             sx={{
@@ -46,6 +45,7 @@ export default function OurClientsMarketing({ brands }: Props) {
         >
             <Carousel {...carouselSettings}>
                 {brands.map((brand) => (
+                    // @ts-ignore
                     <SvgColor
                         key={brand.id}
                         src={brand.image}
