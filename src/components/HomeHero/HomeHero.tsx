@@ -7,7 +7,7 @@ import { bgGradient } from 'src/utils/cssStyles';
 import useResponsive from 'src/hooks/useResponsive';
 // components
 import Image from 'src/components/image';
-import Iconify from 'src/components/iconify';
+import Iconify from "@/components/common/Iconify";
 
 // ----------------------------------------------------------------------
 
