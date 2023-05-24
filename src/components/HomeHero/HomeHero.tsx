@@ -2,7 +2,7 @@
 import { alpha, styled } from '@mui/material/styles';
 import { Stack, Container, Typography, Button, Fab, Unstable_Grid2 as Grid } from '@mui/material';
 // utils
-import { bgGradient } from 'src/utils/cssStyles';
+import { bgGradient } from "@/utils/cssStyles";
 // hooks
 import useResponsive from "@/hooks/useResponsive";
 // components
