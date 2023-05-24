@@ -4,7 +4,7 @@ import { Stack, Container, Typography, Button, Fab, Unstable_Grid2 as Grid } fro
 // utils
 import { bgGradient } from 'src/utils/cssStyles';
 // hooks
-import useResponsive from 'src/hooks/useResponsive';
+import useResponsive from "@/hooks/useResponsive";
 // components
 import Image from "@/components/common/Image"
 import Iconify from "@/components/common/Iconify";
