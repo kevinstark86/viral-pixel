@@ -52,8 +52,7 @@ export default function MarketingLandingHero() {
                         </Typography>
 
                         <Typography sx={{ color: 'text.secondary' }}>
-                            Etiam sollicitudin, ipsum eu pulvinar rutrum, tellus ipsum laoreet sapien, quis
-                            venenatis ante odio sit amet eros.
+                            Unleash your sales potential with our innovative, data-driven digital marketing strategies. Partner with us today.
                         </Typography>
 
                         <Stack
@@ -64,7 +63,7 @@ export default function MarketingLandingHero() {
                             sx={{ mt: 5 }}
                         >
                             <Button variant="contained" color="inherit" size="large">
-                                Try For Free
+                                Learn More
                             </Button>
 
                             <Stack direction="row" alignItems="center" sx={{ typography: 'h6' }}>
