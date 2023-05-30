@@ -8,7 +8,7 @@ import { NAV } from '@/config-global';
 // components
 import Logo from 'src/components/logo';
 import Iconify from '@/components/common/Iconify';
-import Scrollbar from 'src/components/scrollbar';
+import Scrollbar from '@/components/common/scrollbar';
 //
 import { NavProps } from '../types';
 import NavList from './NavList';
