@@ -6,7 +6,7 @@ import { List, Drawer, IconButton, Button, Stack } from '@mui/material';
 // config
 import { NAV } from '@/config-global';
 // components
-import Logo from 'src/components/logo';
+import Logo from '@/components/common/logo';
 import Iconify from '@/components/common/Iconify';
 import Scrollbar from '@/components/common/scrollbar';
 //
@@ -35,6 +35,7 @@ export default function NavMobile({ data }: NavProps) {
         setOpen(false);
     };
 
+    // @ts-ignore
     return (
         <>
             <IconButton onClick={handleOpen} sx={{ ml: 1, color: 'inherit' }}>

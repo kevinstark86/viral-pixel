@@ -7,17 +7,17 @@ import useResponsive from '@/hooks/useResponsive';
 // utils
 import { bgBlur } from '@/utils/cssStyles';
 // routes
-import { paths } from 'src/routes/paths';
+import { paths } from '@/routes/paths';
 // config
 import { HEADER } from '@/config-global';
 // components
-import Logo from 'src/components/logo';
+import Logo from '@/components/common/logo';
 import Label from '@/components/common/Label';
 import SettingsDrawer from '@/settings/drawer';
 //
 import { NavMobile, NavDesktop, navConfig } from '../nav';
-import Searchbar from '../../components/Searchbar';
-import HeaderShadow from '../../components/HeaderShadow';
+import Searchbar from '@/layouts/main/components/Searchbar';
+import HeaderShadow from '@/layouts/main/components/HeaderShadow';
 
 // ----------------------------------------------------------------------
 

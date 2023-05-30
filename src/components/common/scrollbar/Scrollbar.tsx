@@ -1,28 +1,32 @@
-// next
-import { useRouter } from 'next/router';
+import { memo } from 'react';
+// @mui
+import { Box } from '@mui/material';
+//
+import { StyledRootScrollbar, StyledScrollbar } from './styles';
+import { ScrollbarProps } from './types';
 
 // ----------------------------------------------------------------------
 
-type ReturnType = {
-    active: boolean;
-    isExternalLink: boolean;
-};
+function Scrollbar({ children, sx, ...other }: ScrollbarProps) {
+    const userAgent = typeof navigator === 'undefined' ? 'SSR' : navigator.userAgent;
 
-export default function useActiveLink(path: string, deep = true): ReturnType {
-    const { pathname, asPath } = useRouter();
+    const isMobile = /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(userAgent);
 
-    const checkPath = path.startsWith('#');
+    if (isMobile) {
+        return (
+            <Box sx={{ overflowX: 'auto', ...sx }} {...other}>
+                {children}
+            </Box>
+        );
+    }
 
-    const currentPath = path === '/' ? '/' : `${path}/`;
-
-    const normalActive =
-        (!checkPath && pathname === currentPath) || (!checkPath && asPath === currentPath);
-
-    const deepActive =
-        (!checkPath && pathname.includes(currentPath)) || (!checkPath && asPath.includes(currentPath));
-
-    return {
-        active: deep ? deepActive : normalActive,
-        isExternalLink: path.includes('http'),
-    };
+    return (
+        <StyledRootScrollbar>
+            <StyledScrollbar clickOnTrack={false} sx={sx} {...other}>
+                {children}
+            </StyledScrollbar>
+        </StyledRootScrollbar>
+    );
 }
+
+export default memo(Scrollbar);
