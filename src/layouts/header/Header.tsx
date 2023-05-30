@@ -9,10 +9,10 @@ import { bgBlur } from '@/utils/cssStyles';
 // routes
 import { paths } from 'src/routes/paths';
 // config
-import { HEADER } from 'src/config-global';
+import { HEADER } from '@/config-global';
 // components
 import Logo from 'src/components/logo';
-import Label from 'src/components/label';
+import Label from '@/components/common/Label';
 import SettingsDrawer from 'src/components/settings/drawer';
 //
 import { NavMobile, NavDesktop, navConfig } from '../nav';
