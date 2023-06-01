@@ -5,13 +5,31 @@ import {ThemeSettings, SettingsProvider} from "@/settings";
 // slick-carousel
 import 'slick-carousel/slick/slick.css';
 import 'slick-carousel/slick/slick-theme.css';
+import {NextPage} from "next";
+import {EmotionCache} from "@emotion/react";
+import createEmotionCache from "@/utils/createEmotionCache";
 
-export default function App({ Component, pageProps }: AppProps) {
+
+const clientSideEmotionCache = createEmotionCache();
+
+
+type NextPageWithLayout = NextPage & {
+    getLayout?: (page: React.ReactElement) => React.ReactNode
+}
+
+export interface AppWithProps extends AppProps {
+    emotionCache?: EmotionCache;
+    Component: NextPageWithLayout;
+}
+
+export default function App(props: AppWithProps) {
+    const {Component, pageProps, emotionCache = clientSideEmotionCache} = props;
+    const getLayout = Component.getLayout ?? ((page) => page);
   return(
       <SettingsProvider>
           <ThemeProvider>
               <ThemeSettings>
-                  <Component {...pageProps} />
+                  {getLayout(<Component {...pageProps} />)}
 
               </ThemeSettings>
 
