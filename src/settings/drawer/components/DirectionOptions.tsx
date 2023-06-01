@@ -1,7 +1,7 @@
 // @mui
 import { ToggleButton, Typography } from '@mui/material';
 //
-import Iconify from '../../../iconify';
+import Iconify from '@/components/common/Iconify';
 import { useSettingsContext } from '../../SettingsContext';
 
 // ----------------------------------------------------------------------
