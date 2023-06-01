@@ -1,10 +1,10 @@
 // @mui
 import { Box, Stack, Drawer, Divider, Typography, IconButton, Tooltip } from '@mui/material';
 // config
-import { NAV } from 'src/config-global';
+import { NAV } from '@/config-global';
 //
-import Iconify from '../../iconify';
-import Scrollbar from '../../scrollbar';
+import Iconify from "@/components/common/Iconify";
+import Scrollbar from '@/components/common/scrollbar';
 //
 import { useSettingsContext } from '../SettingsContext';
 import BadgeDot from './components/BadgeDot';
