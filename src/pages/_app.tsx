@@ -6,7 +6,7 @@ import {ThemeSettings, SettingsProvider} from "@/settings";
 import 'slick-carousel/slick/slick.css';
 import 'slick-carousel/slick/slick-theme.css';
 import {NextPage} from "next";
-import {EmotionCache} from "@emotion/react";
+import {CacheProvider, EmotionCache} from "@emotion/react";
 import createEmotionCache from "@/utils/createEmotionCache";
 
 

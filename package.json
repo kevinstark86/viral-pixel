@@ -22,6 +22,7 @@
     "framer-motion": "^10.12.16",
     "lodash.merge": "^4.6.2",
     "next": "13.4.3",
+    "nprogress": "^0.2.0",
     "numeral": "^2.0.6",
     "react": "18.2.0",
     "react-dom": "18.2.0",
@@ -36,6 +37,7 @@
   "devDependencies": {
     "@iconify/react": "^4.1.0",
     "@types/lodash.merge": "^4.6.7",
+    "@types/nprogress": "^0.2.0",
     "@types/numeral": "^2.0.2",
     "@types/react-lazy-load-image-component": "^1.5.3",
     "@types/react-slick": "^0.23.10",
