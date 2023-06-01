@@ -2,7 +2,7 @@ import { m } from 'framer-motion';
 // @mui
 import { Box, IconButton } from '@mui/material';
 //
-import Iconify from '../../../iconify';
+import Iconify from '@/components/common/Iconify';
 //
 import BadgeDot from './BadgeDot';
 
