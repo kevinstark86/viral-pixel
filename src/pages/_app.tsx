@@ -9,6 +9,10 @@ import {NextPage} from "next";
 import {CacheProvider, EmotionCache} from "@emotion/react";
 import createEmotionCache from "@/utils/createEmotionCache";
 
+// components
+import ProgressBar from "@/components/common/progress-bar";
+import MotionLazyContainer from "@/components/animate/MotionContainer"
+
 
 const clientSideEmotionCache = createEmotionCache();
 
@@ -26,16 +30,24 @@ export default function App(props: AppWithProps) {
     const {Component, pageProps, emotionCache = clientSideEmotionCache} = props;
     const getLayout = Component.getLayout ?? ((page) => page);
   return(
-      <SettingsProvider>
-          <ThemeProvider>
-              <ThemeSettings>
-                  {getLayout(<Component {...pageProps} />)}
+      <CacheProvider value={emotionCache}>
+          <SettingsProvider>
+              <ThemeProvider>
+                  <ThemeSettings>
+                      <MotionLazyContainer>
+                          <ProgressBar/>
+                          {getLayout(<Component {...pageProps} />)}
 
-              </ThemeSettings>
+                      </MotionLazyContainer>
 
-          </ThemeProvider>
 
-      </SettingsProvider>
+                  </ThemeSettings>
+
+              </ThemeProvider>
+
+          </SettingsProvider>
+      </CacheProvider>
+
 
 
       )
