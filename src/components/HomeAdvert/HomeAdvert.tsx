@@ -42,8 +42,8 @@ export default function HomeAdvert() {
                 </Typography>
 
                 <Typography variant="h1" component="h2" sx={{ mb: 8 }}>
-                    Create Your
-                    <br /> Website Today
+                    Boost Your
+                    <br /> Marketing Today
                 </Typography>
 
                 <Button
@@ -53,7 +53,7 @@ export default function HomeAdvert() {
                     rel="noopener"
                     href={paths.zoneStore}
                 >
-                    Purchase Now
+                    Get Started
                 </Button>
             </StyledContent>
         </StyledRoot>
