@@ -92,7 +92,7 @@ export default function Header({ headerOnDark }: Props) {
                         <Stack spacing={1} direction="row" alignItems="center">
                             <Searchbar />
 
-                            <SettingsDrawer />
+
                         </Stack>
 
                         {isMdUp && (
@@ -103,7 +103,7 @@ export default function Header({ headerOnDark }: Props) {
                                 target="_blank"
                                 rel="noopener"
                             >
-                                Buy Now
+                                Contact Us
                             </Button>
                         )}
                     </Stack>
