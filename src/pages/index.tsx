@@ -4,6 +4,7 @@ import MarketingLandingAbout from "@/components/MarketingLandingAbout/MarketingL
 import MarketingLandingServices from "@/components/MarketingLandingServices/MarketingLandingServices";
 import MarketingLandingProcess from "@/components/MarketingLandingProcess/MarketingLandingProcess";
 import MarketingLandingCaseStudies from "@/components/MarketingLandingCaseStudies/MarketingLandingCaseStudies";
+import MarketingLandingFaqs from "@/components/MarketingLandingFaqs/MarketingLandingFaqs";
 import MainLayout from "@/layouts/main/MainLayout";
 import {_brands, _caseStudies} from '@/_mock'
 
@@ -18,6 +19,7 @@ export default function Home() {
       <MarketingLandingServices/>
         <MarketingLandingProcess/>
         <MarketingLandingCaseStudies caseStudies={_caseStudies.slice(-6)}/>
+        <MarketingLandingFaqs/>
 
     </>
   )
