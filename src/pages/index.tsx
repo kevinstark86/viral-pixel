@@ -1,6 +1,8 @@
 import MarketingLandingHero from "@/components/MarketingLandingHero/MarketingLandingHero";
 import OurClientsMarketing from "@/components/OurClients/OurClientsMarketing";
 import MarketingLandingAbout from "@/components/MarketingLandingAbout/MarketingLandingAbout";
+import MarketingLandingServices from "@/components/MarketingLandingServices/MarketingLandingServices";
+import MarketingLandingProcess from "@/components/MarketingLandingProcess/MarketingLandingProcess";
 import MainLayout from "@/layouts/main/MainLayout";
 import {_brands} from '@/_mock'
 
@@ -12,6 +14,8 @@ export default function Home() {
       <MarketingLandingHero/>
         <OurClientsMarketing brands={_brands}/>
         <MarketingLandingAbout/>
+      <MarketingLandingServices/>
+        <MarketingLandingProcess/>
 
     </>
   )
