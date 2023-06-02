@@ -33,7 +33,7 @@ const StyledContent = styled('div')(({ theme }) => ({
 
 // ----------------------------------------------------------------------
 
-export default function HomeAdvertisement() {
+export default function HomeAdvert() {
     return (
         <StyledRoot>
             <StyledContent>

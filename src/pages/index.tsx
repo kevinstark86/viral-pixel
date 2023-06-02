@@ -11,6 +11,7 @@ import LatestPosts from "@/components/blog/latest-posts/LatestPosts";
 import NewsLetter from "@/components/NewsLetter";
 import HomeFaq from "@/components/HomeFaq/HomeFaq";
 import HomeCombination from "@/components/HomeCombination/HomeCombination";
+import HomeAdvert from "@/components/HomeAdvert/HomeAdvert";
 import {_brands, _caseStudies, _testimonials, _blogCoursePosts} from '@/_mock'
 
 Home.getLayout = (page: React.ReactElement) => <MainLayout>{page}</MainLayout>
@@ -29,7 +30,7 @@ export default function Home() {
       <LatestPosts posts={_blogCoursePosts.slice(0, 4)}/>
         <HomeFaq/>
         <HomeCombination/>
-        <NewsLetter/>
+        <HomeAdvert/>
 
 
 
