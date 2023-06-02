@@ -15,7 +15,7 @@ type Props = {
     testimonials: ITestimonialProps[];
 };
 
-export default function TestimonialElearning({ testimonials }: Props) {
+export default function HomeTestimonial({ testimonials }: Props) {
     const theme = useTheme();
 
     const [selected, setSelected] = useState(0);
