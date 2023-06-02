@@ -6,7 +6,8 @@ import MarketingLandingProcess from "@/components/MarketingLandingProcess/Market
 import MarketingLandingCaseStudies from "@/components/MarketingLandingCaseStudies/MarketingLandingCaseStudies";
 import MarketingLandingFaqs from "@/components/MarketingLandingFaqs/MarketingLandingFaqs";
 import MainLayout from "@/layouts/main/MainLayout";
-import {_brands, _caseStudies} from '@/_mock'
+import TestimonialMarketing from "@/components/LandingTestimonial/TestimonialMarketing";
+import {_brands, _caseStudies, _testimonials} from '@/_mock'
 
 Home.getLayout = (page: React.ReactElement) => <MainLayout>{page}</MainLayout>
 
@@ -20,6 +21,8 @@ export default function Home() {
         <MarketingLandingProcess/>
         <MarketingLandingCaseStudies caseStudies={_caseStudies.slice(-6)}/>
         <MarketingLandingFaqs/>
+        <TestimonialMarketing testimonials={_testimonials}/>
+
 
     </>
   )
