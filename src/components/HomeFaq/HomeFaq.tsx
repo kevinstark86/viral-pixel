@@ -51,7 +51,7 @@ const CONTENTS = [
 
 // ----------------------------------------------------------------------
 
-export default function HomeFAQs() {
+export default function HomeFaq() {
     const isSmUp = useResponsive('up', 'sm');
 
     const [expanded, setExpanded] = useState<string | false>(false);
