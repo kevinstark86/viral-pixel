@@ -29,7 +29,7 @@ export default function Home() {
         <HomeTestimonial testimonials={_testimonials}/>
       <LatestPosts posts={_blogCoursePosts.slice(0, 4)}/>
         <HomeFaq/>
-        <HomeCombination/>
+
         <HomeAdvert/>
 
 
