@@ -1,6 +1,15 @@
 // ----------------------------------------------------------------------
 
 export const paths = {
+    // pages for viral pixel
+    viralPages: {
+        about: '/about',
+        services: '/services',
+        blog: '/blog',
+        contact: '/contact',
+        caseStudies: '/case-studies',
+
+    },
     // Marketing
     marketing: {
         landing: '/marketing/landing',

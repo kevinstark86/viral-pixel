@@ -1,18 +1,18 @@
-import MarketingLandingHero from "@/components/MarketingLandingHero/MarketingLandingHero";
-import OurClientsMarketing from "@/components/OurClients/OurClientsMarketing";
-import MarketingLandingAbout from "@/components/MarketingLandingAbout/MarketingLandingAbout";
-import MarketingLandingServices from "@/components/MarketingLandingServices/MarketingLandingServices";
-import MarketingLandingProcess from "@/components/MarketingLandingProcess/MarketingLandingProcess";
-import MarketingLandingCaseStudies from "@/components/MarketingLandingCaseStudies/MarketingLandingCaseStudies";
-import MarketingLandingFaqs from "@/components/MarketingLandingFaqs/MarketingLandingFaqs";
+import MarketingLandingHero from "@/components/homepage-components/MarketingLandingHero/MarketingLandingHero";
+import OurClientsMarketing from "@/components/homepage-components/OurClients/OurClientsMarketing";
+import MarketingLandingAbout from "@/components/homepage-components/MarketingLandingAbout/MarketingLandingAbout";
+import MarketingLandingServices from "@/components/homepage-components/MarketingLandingServices/MarketingLandingServices";
+import MarketingLandingProcess from "@/components/homepage-components/MarketingLandingProcess/MarketingLandingProcess";
+import MarketingLandingCaseStudies from "@/components/homepage-components/MarketingLandingCaseStudies/MarketingLandingCaseStudies";
+import MarketingLandingFaqs from "@/components/homepage-components/MarketingLandingFaqs/MarketingLandingFaqs";
 import MainLayout from "@/layouts/main/MainLayout";
-import TestimonialMarketing from "@/components/LandingTestimonial/TestimonialMarketing";
+import TestimonialMarketing from "@/components/homepage-components/LandingTestimonial/TestimonialMarketing";
 import LatestPosts from "@/components/blog/latest-posts/LatestPosts";
-import NewsLetter from "@/components/NewsLetter";
-import HomeFaq from "@/components/HomeFaq/HomeFaq";
-import HomeCombination from "@/components/HomeCombination/HomeCombination";
-import HomeAdvert from "@/components/HomeAdvert/HomeAdvert";
-import HomeTestimonial from "@/components/HomeTestimonial/HomeTestimonial";
+import NewsLetter from "@/components/homepage-components/NewsLetter";
+import HomeFaq from "@/components/homepage-components/HomeFaq/HomeFaq";
+import HomeCombination from "@/components/homepage-components/HomeCombination/HomeCombination";
+import HomeAdvert from "@/components/homepage-components/HomeAdvert/HomeAdvert";
+import HomeTestimonial from "@/components/homepage-components/HomeTestimonial/HomeTestimonial";
 import {_brands, _caseStudies, _testimonials, _blogCoursePosts} from '@/_mock'
 
 Home.getLayout = (page: React.ReactElement) => <MainLayout>{page}</MainLayout>
