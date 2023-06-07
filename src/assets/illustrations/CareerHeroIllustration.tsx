@@ -4,10 +4,10 @@ import { m } from 'framer-motion';
 import { useTheme } from '@mui/material/styles';
 import { Box, BoxProps } from '@mui/material';
 // hooks
-import useHoverParallax from 'src/hooks/useHoverParallax';
+import useHoverParallax from '@/hooks/useHoverParallax';
 // components
-import Image from 'src/components/image';
-import SvgColor from 'src/components/svg-color';
+import Image from '@/components/common/Image';
+import SvgColor from '@/components/common/SvgColor/SvgColor';
 // pattern
 import { Icon, Label, Character, Pattern01, Pattern02 } from './pattern';
 
