@@ -110,11 +110,12 @@ export const pageLinks = [
 
 export const navConfig = [
     { title: 'Home', path: '/' },
-    { title: 'About', path: paths.viralPages.about },
+
     {
         title: 'Services',
         path: paths.viralPages.services,
     },
+    { title: 'About', path: paths.viralPages.about },
     { title: 'Case Studies', path: paths.viralPages.caseStudies },
     {title: 'Blog', path: paths.viralPages.blog},
 ];

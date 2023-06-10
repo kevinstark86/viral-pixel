@@ -98,7 +98,7 @@ export default function ServicesLandingHero() {
                                 <Typography variant="h1" sx={{ color: 'common.white' }}>
                                     Get The
                                     <Box component="span" sx={{ color: 'primary.main' }}>
-                                        {` Career `}
+                                        {` Results `}
                                     </Box>
                                     You Deserve
                                 </Typography>
