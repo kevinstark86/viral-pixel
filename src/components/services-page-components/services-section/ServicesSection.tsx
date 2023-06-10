@@ -1,78 +1,96 @@
-// next
-import NextLink from 'next/link';
 // @mui
-import { Box, Container, Typography, Button, Stack, Unstable_Grid2 as Grid } from '@mui/material';
-// routes
-import { paths } from '@/routes/paths';
+import { Typography, Container, Box } from '@mui/material';
 // components
-import Image from '@/components/common/Image';
-import Iconify from '@/components/common/Iconify';
+import SvgColor from '@/components/common/SvgColor/SvgColor';
 
 // ----------------------------------------------------------------------
 
-const LISTS = [
-    'First Class Flights',
-    '5 Star Accommodations',
-    'Inclusive Packages',
-    'Latest Model Vehicles',
+const SERVICES = [
+    {
+        title: 'Search Engine Optimization',
+        description: 'Suspendisse enim turpis, dictum sed, iaculis a, condimentum nec, nisi. ',
+        icon: '/assets/icons/ic_statistics.svg',
+    },
+    {
+        title: 'Social Media Strategy',
+        description: 'Suspendisse enim turpis, dictum sed, iaculis a, condimentum nec, nisi. ',
+        icon: '/assets/icons/ic_social_media.svg',
+    },
+    {
+        title: 'Real Time and Data',
+        description: 'Suspendisse enim turpis, dictum sed, iaculis a, condimentum nec, nisi. ',
+        icon: '/assets/icons/ic_real_time.svg',
+    },
+    {
+        title: 'Online Media Management',
+        description: 'Suspendisse enim turpis, dictum sed, iaculis a, condimentum nec, nisi. ',
+        icon: '/assets/icons/ic_checklist.svg',
+    },
+    {
+        title: 'Reporting & Analysis',
+        description: 'Suspendisse enim turpis, dictum sed, iaculis a, condimentum nec, nisi. ',
+        icon: '/assets/icons/ic_report.svg',
+    },
+    {
+        title: 'Penalty Recovery',
+        description: 'Suspendisse enim turpis, dictum sed, iaculis a, condimentum nec, nisi. ',
+        icon: '/assets/icons/ic_file.svg',
+    },
 ];
 
 // ----------------------------------------------------------------------
 
-export default function MarketingServices() {
+export default function MarketingServicesInclude() {
     return (
         <Container
             sx={{
+                textAlign: 'center',
                 pt: { xs: 10, md: 15 },
-                pb: { xs: 5, md: 10 },
+                pb: { xs: 10, md: 15 },
             }}
         >
-            <Grid container spacing={3} justifyContent="space-between" alignItems="center">
-                <Grid xs={12} md={6} lg={5}>
-                    <Image alt="services" src="/assets/illustrations/illustration_services.svg" />
-                </Grid>
+            <Typography variant="h2">Services Include</Typography>
 
-                <Grid xs={12} md={6} lg={6}>
-                    <Stack spacing={3} sx={{ mb: 5 }}>
-                        <Typography variant="h2">Offline SEO</Typography>
+            <Typography
+                sx={{
+                    mt: 3,
+                    mx: 'auto',
+                    maxWidth: 480,
+                    color: 'text.secondary',
+                    mb: { xs: 8, md: 10 },
+                }}
+            >
+                Nunc nonummy metus. Donec elit libero, sodales nec, volutpat a, suscipit non, turpis.
+            </Typography>
 
-                        <Typography sx={{ color: 'text.secondary' }}>
-                            Aenean commodo ligula eget dolor. Sed hendrerit. Vestibulum ante ipsum primis in
-                            faucibus orci luctus et ultrices posuere cubilia Curae; In ac dui quis mi consectetuer
-                            lacinia.
+            <Box
+                sx={{
+                    rowGap: 8,
+                    columnGap: 10,
+                    display: 'grid',
+                    gridTemplateColumns: {
+                        xs: 'repeat(1, 1fr)',
+                        sm: 'repeat(2, 1fr)',
+                        md: 'repeat(3, 1fr)',
+                    },
+                }}
+            >
+                {SERVICES.map((value) => (
+                    <div key={value.title}>
+                        <SvgColor
+                            src={value.icon}
+                            color="info"
+                            sx={{ width: 64, height: 64, mx: 'auto', bgcolor: 'primary.main' }}
+                        />
+
+                        <Typography variant="h5" sx={{ mt: 5, mb: 2 }}>
+                            {value.title}
                         </Typography>
 
-                        <Stack spacing={2}>
-                            {LISTS.map((text) => (
-                                <Stack key={text} direction="row" alignItems="center">
-                                    <Box
-                                        component="span"
-                                        sx={{
-                                            mr: 2,
-                                            width: 6,
-                                            height: 6,
-                                            borderRadius: '50%',
-                                            bgcolor: 'primary.main',
-                                        }}
-                                    />
-                                    {text}
-                                </Stack>
-                            ))}
-                        </Stack>
-                    </Stack>
-
-                    <Button
-                        component={NextLink}
-                        href={paths.marketing.caseStudies}
-                        size="large"
-                        color="inherit"
-                        variant="outlined"
-                        endIcon={<Iconify icon="carbon:chevron-right" />}
-                    >
-                        Check Our Work
-                    </Button>
-                </Grid>
-            </Grid>
+                        <Typography sx={{ color: 'text.secondary' }}> {value.description} </Typography>
+                    </div>
+                ))}
+            </Box>
         </Container>
     );
 }
