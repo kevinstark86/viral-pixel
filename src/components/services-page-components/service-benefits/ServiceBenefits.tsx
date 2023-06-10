@@ -42,7 +42,7 @@ const BENEFITS = [
 
 // ----------------------------------------------------------------------
 
-export default function MarketingServicesBenefits() {
+export default function ServicesBenefits() {
     const isMdUp = useResponsive('up', 'md');
 
     return (
