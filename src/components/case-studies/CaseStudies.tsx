@@ -9,7 +9,7 @@ import { MarketingCaseStudyList } from './list';
 
 // ----------------------------------------------------------------------
 
-export default function MarketingCaseStudiesView() {
+export default function CaseStudies() {
     return (
         <>
             <Container>
