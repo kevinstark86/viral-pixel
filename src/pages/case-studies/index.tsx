@@ -1,7 +1,9 @@
-import Case
+import CaseStudies from "@/components/case-studies/CaseStudies";
 
 export default function CaseStudies() {
     return (
-        <div><h2>Case Studies Page</h2></div>
+        <>
+            <CaseStudies/>
+        </>
     )
 }
