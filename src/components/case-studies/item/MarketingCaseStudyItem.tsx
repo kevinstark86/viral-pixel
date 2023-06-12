@@ -3,12 +3,12 @@ import NextLink from 'next/link';
 // @mui
 import { Stack, Typography, Link } from '@mui/material';
 // routes
-import { paths } from '../../Downloads/Zone_TypeScript_v2.0.0/next_TS/src/routes/paths';
+import { paths } from '@/routes/paths';
 // types
-import { ICaseStudyProps } from '../../Downloads/Zone_TypeScript_v2.0.0/next_TS/src/types/case-study';
+import { ICaseStudyProps } from '@/types/case-study';
 // components
-import Image from '../../Downloads/Zone_TypeScript_v2.0.0/next_TS/src/components/image';
-import TextMaxLine from '../../Downloads/Zone_TypeScript_v2.0.0/next_TS/src/components/text-max-line';
+import Image from '@/components/common/Image';
+import TextMaxLine from '@/components/common/text-max-line';
 
 // ----------------------------------------------------------------------
 
