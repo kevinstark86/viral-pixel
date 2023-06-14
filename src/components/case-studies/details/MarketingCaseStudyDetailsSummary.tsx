@@ -1,13 +1,13 @@
 // @mui
 import { Typography, Divider, Stack, IconButton, Link } from '@mui/material';
 // utils
-import { fDate } from '../../Downloads/Zone_TypeScript_v2.0.0/next_TS/src/utils/formatTime';
+import { fDate } from '@/utils/formatTime';
 // types
-import { ICaseStudyProps } from '../../Downloads/Zone_TypeScript_v2.0.0/next_TS/src/types/case-study';
+import { ICaseStudyProps } from '@/types/case-study';
 // _mock
-import { _socials } from '../../Downloads/Zone_TypeScript_v2.0.0/next_TS/src/_mock';
+import { _socials } from '@/_mock';
 // components
-import Iconify from '../../Downloads/Zone_TypeScript_v2.0.0/next_TS/src/components/iconify';
+import Iconify from '@/components/common/Iconify';
 
 // ----------------------------------------------------------------------
 
