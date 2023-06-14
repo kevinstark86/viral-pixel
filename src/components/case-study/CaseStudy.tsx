@@ -7,10 +7,10 @@ import { _caseStudies, _testimonials } from '@/_mock';
 // components
 import Image from '@/components/common/Image';
 import Markdown from '@/components/common/markdown';
-import CustomBreadcrumbs from 'src/components/custom-breadcrumbs';
+import CustomBreadcrumbs from '@/components/common/custom-breadcrumbs';
 //
-import NewsletterMarketing from '../../newsletter/marketing';
-import TestimonialMarketing from '../../testimonial/marketing';
+
+import HomeTestimonial from "@/components/homepage-components/HomeTestimonial/HomeTestimonial";
 import { MarketingLandingFreeSEO } from '../landing';
 import { MarketingCaseStudyListSimilar } from '../case-study/list';
 import {
@@ -55,7 +55,7 @@ export default function MarketingCaseStudyView() {
                 </Grid>
             </Container>
 
-            <TestimonialMarketing testimonials={_testimonials} />
+            <HomeTestimonial testimonials={_testimonials} />
 
             <MarketingCaseStudyListSimilar caseStudies={_caseStudies.slice(0, 3)} />
 
