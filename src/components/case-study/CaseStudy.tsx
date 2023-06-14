@@ -21,7 +21,7 @@ import {
 
 const _mockCaseStudy = _caseStudies[0];
 
-export default function MarketingCaseStudyView() {
+export default function CaseStudy() {
     return (
         <>
             <Container
