@@ -11,12 +11,11 @@ import CustomBreadcrumbs from '@/components/common/custom-breadcrumbs';
 //
 
 import HomeTestimonial from "@/components/homepage-components/HomeTestimonial/HomeTestimonial";
-import { MarketingLandingFreeSEO } from '../landing';
-import { MarketingCaseStudyListSimilar } from '../case-study/list';
+import { MarketingCaseStudyListSimilar } from '@/components/case-studies/list';
 import {
     MarketingCaseStudyDetailsSummary,
     MarketingCaseStudyDetailsGallery,
-} from '../case-study/details';
+} from '@/components/case-studies/details';
 
 // ----------------------------------------------------------------------
 
@@ -59,9 +58,6 @@ export default function MarketingCaseStudyView() {
 
             <MarketingCaseStudyListSimilar caseStudies={_caseStudies.slice(0, 3)} />
 
-            <MarketingLandingFreeSEO />
-
-            <NewsletterMarketing />
         </>
     );
 }
