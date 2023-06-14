@@ -5,7 +5,7 @@ import { useTheme } from '@mui/material/styles';
 import { Typography, Box, Stack } from '@mui/material';
 // components
 import Image from '@/components/common/Image';
-import Lightbox, { useLightBox } from '../../Downloads/Zone_TypeScript_v2.0.0/next_TS/src/components/lightbox';
+import Lightbox, { useLightBox } from '@/components/common/lightbox';
 import Carousel, { CarouselArrows } from '@/components/common/Carousel';
 import { varHover, varTranHover } from '@/components/animate';
 
