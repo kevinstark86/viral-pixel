@@ -4,10 +4,10 @@ import { useRef, useEffect } from 'react';
 import { useTheme } from '@mui/material/styles';
 import { Typography, Box, Stack } from '@mui/material';
 // components
-import Image from '../../Downloads/Zone_TypeScript_v2.0.0/next_TS/src/components/image';
+import Image from '@/components/common/Image';
 import Lightbox, { useLightBox } from '../../Downloads/Zone_TypeScript_v2.0.0/next_TS/src/components/lightbox';
-import Carousel, { CarouselArrows } from '../../Downloads/Zone_TypeScript_v2.0.0/next_TS/src/components/carousel';
-import { varHover, varTranHover } from 'src/components/animate';
+import Carousel, { CarouselArrows } from '@/components/common/Carousel';
+import { varHover, varTranHover } from '@/components/animate';
 
 // ----------------------------------------------------------------------
 
