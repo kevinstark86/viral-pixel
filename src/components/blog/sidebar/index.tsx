@@ -9,7 +9,7 @@ import useResponsive from '@/hooks/useResponsive';
 // components
 import Iconify from '@/components/common/Iconify';
 //
-import Advertisement from '../../../../../../Downloads/Zone_TypeScript_v2.0.0/next_TS/src/sections/advertisement';
+import Advertisement from '@/components/advert';
 import BlogSidebarAuthor from './BlogSidebarAuthor';
 import BlogSidebarCategories from './BlogSidebarCategories';
 import BlogSidebarPopularTags from './BlogSidebarPopularTags';
