@@ -68,6 +68,7 @@ export default function Footer() {
         </Container>
     );
 
+    // @ts-ignore
     const mainFooter = (
         <>
             <Divider />
@@ -132,13 +133,17 @@ export default function Footer() {
                     <Grid xs={12} md={6}>
                         {isMdUp ? (
                             <Masonry columns={4} spacing={2} defaultColumns={4} defaultSpacing={2}>
-                                {renderLists.map((list) => (
+                                {
+                                    // @ts-ignore
+                                    renderLists.map((list) => (
                                     <ListDesktop key={list.subheader} list={list} />
                                 ))}
                             </Masonry>
                         ) : (
                             <Stack spacing={1.5}>
-                                {renderLists.map((list) => (
+                                {
+                                    // @ts-ignore
+                                    renderLists.map((list) => (
                                     <ListMobile key={list.subheader} list={list} />
                                 ))}
                             </Stack>
