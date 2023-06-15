@@ -37,7 +37,10 @@
     "stylis": "^4.2.0",
     "stylis-plugin-rtl": "^2.1.1",
     "typescript": "5.0.4",
-    "yet-another-react-lightbox": "^3.10.1"
+    "yet-another-react-lightbox": "^3.10.1",
+    "resolutions": {
+      "react-countup/countup.js": "2.5.0"
+    }
   },
   "devDependencies": {
     "@iconify/react": "^4.1.0",
