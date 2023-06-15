@@ -52,6 +52,7 @@ const StyledShape02 = styled('div')(({ theme }) => ({
 
 // ----------------------------------------------------------------------
 
+// @ts-ignore
 interface Props extends BoxProps {
   color: string;
   content: React.ReactElement;
