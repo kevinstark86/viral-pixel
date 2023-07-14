@@ -28,7 +28,7 @@ export default function CareerBlogView() {
             >
                 <Grid container spacing={{ md: 8 }}>
                     <Grid xs={12} md={8}>
-                        <BlogCareerPosts posts={_blogCareerPosts} />
+                        <BlogCareerPosts/>
                     </Grid>
 
                     <Grid xs={12} md={4}>
