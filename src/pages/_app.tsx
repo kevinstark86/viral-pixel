@@ -20,6 +20,8 @@ import { CacheProvider, EmotionCache } from '@emotion/react';
 import Head from 'next/head';
 import { NextPage } from 'next';
 import { AppProps } from 'next/app';
+import {Provider} from "react-redux";
+import {store} from "@/redux/store";
 // @mui
 import { AdapterDateFns } from '@mui/x-date-pickers/AdapterDateFns';
 import { LocalizationProvider } from '@mui/x-date-pickers/LocalizationProvider';
@@ -51,23 +53,25 @@ export default function App(props: MyAppProps) {
     const {Component, pageProps, emotionCache = clientSideEmotionCache} = props;
     const getLayout = Component.getLayout ?? ((page) => page);
   return(
-      <CacheProvider value={emotionCache}>
-          <SettingsProvider>
-              <ThemeProvider>
-                  <ThemeSettings>
-                      <MotionLazyContainer>
-                          <ProgressBar/>
-                          {getLayout(<Component {...pageProps} />)}
+      <Provider store={store}>
+          <CacheProvider value={emotionCache}>
+              <SettingsProvider>
+                  <ThemeProvider>
+                      <ThemeSettings>
+                          <MotionLazyContainer>
+                              <ProgressBar/>
+                              {getLayout(<Component {...pageProps} />)}
 
-                      </MotionLazyContainer>
+                          </MotionLazyContainer>
 
 
-                  </ThemeSettings>
+                      </ThemeSettings>
 
-              </ThemeProvider>
+                  </ThemeProvider>
 
-          </SettingsProvider>
-      </CacheProvider>
+              </SettingsProvider>
+          </CacheProvider>
+      </Provider>
 
 
 
