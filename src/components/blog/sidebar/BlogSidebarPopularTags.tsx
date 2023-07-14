@@ -1,23 +1,20 @@
 // @mui
 import { Typography, Chip, Box } from '@mui/material';
-// types
-import { IBlogTagsProps } from '@/types/blog';
+import {useGetAllTagsQuery} from "@/redux/services/blogPosts";
 
 // ----------------------------------------------------------------------
 
-type Props = {
-  popularTags: IBlogTagsProps[];
-};
 
-export default function BlogSidebarPopularTags({ popularTags }: Props) {
+export default function BlogSidebarPopularTags() {
+    const {data, error, isLoading} = useGetAllTagsQuery()
   return (
     <Box>
       <Typography variant="h5" sx={{ mb: 3 }}>
         Popular Tags
       </Typography>
 
-      {popularTags.map((tag) => (
-        <Chip key={tag.label} label={tag.label} sx={{ m: 0.5 }} onClick={() => {}} />
+      {data?.docs.map((tag) => (
+        <Chip key={tag.name} label={tag.name} sx={{ m: 0.5 }} onClick={() => {}} />
       ))}
     </Box>
   );

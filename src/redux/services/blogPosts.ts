@@ -1,5 +1,14 @@
 import {createApi, fetchBaseQuery} from "@reduxjs/toolkit/query/react";
 
+type Categories = {
+    id: string,
+    name: string,
+}
+
+type CategoryData = {
+    docs: Categories[]
+}
+
 type Posts = {
     docs: [];
     hasNextPage: boolean;
@@ -43,8 +52,14 @@ export const blogPostsApi = createApi({
         }),
         getAllTags: builder.query<TagsData, void>({
             query: () => `tags`,
+        }),
+        getAllCategories: builder.query<CategoryData, void>({
+            query: () => `categories`
+        }),
+        getPopularGuides: builder.query<Posts, void>({
+            query: () => `posts?where[tags.name][equals]=Guides&limit=4&page=1`
         })
     })
 })
 
-export const {useGetAllPostsQuery, useGetPostsByTagQuery, useGetAllTagsQuery} = blogPostsApi;
+export const {useGetAllPostsQuery, useGetPostsByTagQuery, useGetAllTagsQuery, useGetAllCategoriesQuery, useGetPopularGuidesQuery} = blogPostsApi;

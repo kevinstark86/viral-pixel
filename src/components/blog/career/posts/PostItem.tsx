@@ -21,7 +21,7 @@ import PostTimeBlock from '@/components/blog/components/PostTimeBlock';
 
 // ----------------------------------------------------------------------
 
-export type Author = {
+type Author = {
     id: string;
     name: string;
     email: string;

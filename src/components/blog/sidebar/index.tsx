@@ -40,37 +40,22 @@ export default function BlogSidebar({
 
   return (
     <>
-      {author && isMdUp && <BlogSidebarAuthor author={author} />}
 
-      {isMdUp && (
-        <TextField
-          fullWidth
-          hiddenLabel
-          placeholder="Search..."
-          InputProps={{
-            startAdornment: (
-              <InputAdornment position="start">
-                <Iconify icon="carbon:search" width={24} sx={{ color: 'text.disabled' }} />
-              </InputAdornment>
-            ),
-          }}
-        />
-      )}
 
       <Stack
         spacing={5}
         sx={{
-          pt: { md: 5 },
+
           pb: { xs: 8, md: 0 },
           ...sx,
         }}
         {...other}
       >
-        {categories && <BlogSidebarCategories categories={categories} />}
+        {categories && <BlogSidebarCategories/>}
 
-        {recentPosts && <BlogSidebarRecentPosts recentPosts={recentPosts} />}
+        {recentPosts && <BlogSidebarRecentPosts/>}
 
-        {popularTags && <BlogSidebarPopularTags popularTags={popularTags} />}
+        {popularTags && <BlogSidebarPopularTags />}
 
         {advertisement && <Advertisement advertisement={advertisement} />}
       </Stack>
