@@ -27,7 +27,7 @@ export default function Home() {
         <MarketingLandingProcess/>
         <MarketingLandingCaseStudies caseStudies={_caseStudies.slice(-6)}/>
         <HomeTestimonial testimonials={_testimonials}/>
-      <LatestPosts posts={_blogCoursePosts.slice(0, 4)}/>
+      <LatestPosts/>
         <HomeFaq/>
 
         <HomeAdvert/>

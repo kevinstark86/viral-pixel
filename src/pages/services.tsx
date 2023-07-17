@@ -16,7 +16,7 @@ export default function Services() {
             <ServicesBenefits/>
             <ServicesHowItWorks/>
             <HomeTestimonial testimonials={_testimonials}/>
-            <LatestPosts posts={_blogCoursePosts.slice(0, 4)}/>
+            <LatestPosts/>
             <HomeAdvert/>
         </>
     )
