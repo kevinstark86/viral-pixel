@@ -33,7 +33,7 @@ export default function CaseStudiesView() {
 
             <HomeTestimonial testimonials={_testimonials} />
 
-            <LatestPosts posts={_blogMarketingPosts.slice(0, 4)} />
+            <LatestPosts/>
 
         </>
     );
