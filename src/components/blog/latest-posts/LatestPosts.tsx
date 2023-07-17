@@ -9,6 +9,9 @@ import { paths } from '@/routes/paths';
 // types
 import { IBlogPostProps } from '@/types/blog';
 // components
+
+// data
+import {useGetLatestPostsQuery} from "@/redux/services/blogPosts";
 import Iconify from '@/components/common/Iconify';
 //
 import PostItem from '@/components/blog/posts/PostItem';
@@ -16,12 +19,33 @@ import PostItemMobile from '@/components/blog/components/PostItemMobile';
 
 // ----------------------------------------------------------------------
 
-type Props = {
-    posts: IBlogPostProps[];
+type Author = {
+    id: string;
+    name: string;
+    email: string;
+    createdAt: string;
+    updatedAt: string;
 };
 
-export default function LatestPosts({ posts }: Props) {
+type Image = {
+    url: string
+}
+
+type CardProps = {
+    id: string;
+    title: string;
+    featuredImage: Image;
+    publishedDate: string;
+    author: Author;
+};
+type Props = {
+    post: CardProps[];
+    onSiderbar?: boolean;
+};
+
+export default function LatestPosts() {
     const isMdUp = useResponsive('up', 'md');
+    const {data, error, isLoading} = useGetLatestPostsQuery();
 
     const viewAllBtn = (
         <Button
@@ -34,6 +58,8 @@ export default function LatestPosts({ posts }: Props) {
         </Button>
     );
 
+    // @ts-ignore
+    // @ts-ignore
     return (
         <Container
             sx={{
@@ -63,12 +89,14 @@ export default function LatestPosts({ posts }: Props) {
                     },
                 }}
             >
-                {posts
+                {data?.docs
                     .slice(0, 3)
                     .map((post) =>
                         isMdUp ? (
+                            // @ts-ignore
                             <PostItem key={post.id} post={post} />
                         ) : (
+                            // @ts-ignore
                             <PostItemMobile key={post.id} post={post} />
                         )
                     )}

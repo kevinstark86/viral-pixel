@@ -58,8 +58,11 @@ export const blogPostsApi = createApi({
         }),
         getPopularGuides: builder.query<Posts, void>({
             query: () => `posts?where[tags.name][equals]=Guides&limit=4&page=1`
+        }),
+        getLatestPosts: builder.query<Posts, void>({
+            query: () => `posts?limit=3&page=1`
         })
     })
 })
 
-export const {useGetAllPostsQuery, useGetPostsByTagQuery, useGetAllTagsQuery, useGetAllCategoriesQuery, useGetPopularGuidesQuery} = blogPostsApi;
+export const {useGetAllPostsQuery, useGetPostsByTagQuery, useGetAllTagsQuery, useGetAllCategoriesQuery, useGetPopularGuidesQuery, useGetLatestPostsQuery} = blogPostsApi;

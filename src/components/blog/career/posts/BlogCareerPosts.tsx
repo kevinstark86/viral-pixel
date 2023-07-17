@@ -16,9 +16,6 @@ import {useGetAllPostsQuery} from "@/redux/services/blogPosts";
 export default function BlogCareerPosts() {
     const [page, setPage] = useState(1);
     const {data, error, isLoading} = useGetAllPostsQuery(page)
-    if(data) {
-        console.log('here are the blog posts', data.docs)
-    }
   return (
       <>
           {error ? (<Typography variant="body1" color="red">There has been an error</Typography>) : isLoading ? (<CircularProgress/>) : data ? (<>
