@@ -48,6 +48,7 @@ type CardProps = {
     publishedDate: string;
     author: Author;
     content: RichTextNode;
+    urlSlug: string
 };
 
 type Props = {
@@ -57,7 +58,9 @@ type Props = {
 
 export default function PostItem({ post, index }: Props) {
   // const { title, duration, coverImg, author, description, createdAt } = post;
-  const {title, publishedDate, author, featuredImage: {url}, content} = post
+  const {title, publishedDate, author, featuredImage: {url}, content, urlSlug} = post;
+
+  const postPath = `/blog/${urlSlug}`;
 
   const noImage = index === 1 || index === 4;
 
@@ -100,7 +103,7 @@ export default function PostItem({ post, index }: Props) {
 
         <Link
           component={NextLink}
-          href={paths.career.post}
+          href={postPath}
           color="inherit"
           variant="h5"
           sx={{

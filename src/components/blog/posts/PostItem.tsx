@@ -45,6 +45,7 @@ type CardProps = {
     publishedDate: string;
     author: Author;
     content: RichTextNode;
+    urlSlug: string
 };
 
 type Props = {
@@ -52,12 +53,14 @@ type Props = {
 };
 
 export default function PostItem({ post }: Props) {
-    const {title, publishedDate, author, featuredImage: {url}, content} = post;
+    const {title, publishedDate, author, featuredImage: {url}, content, urlSlug} = post;
     // @ts-ignore
     const stats = wordCounter(content)
     const time = readingTime(stats)
     // @ts-ignore
     const description = postSnippet(content, 25)
+
+    const postPath = `/blog/${urlSlug}`;
 
     return (
         <Paper variant="outlined" sx={{ borderRadius: 2, overflow: 'hidden' }}>
@@ -73,7 +76,7 @@ export default function PostItem({ post }: Props) {
                 </Stack>
 
                 <Stack spacing={1}>
-                    <Link component={NextLink} href={paths.eLearning.post} color="inherit">
+                    <Link component={NextLink} href={postPath} color="inherit">
                         <TextMaxLine variant="h6" persistent>
                             {title}
                         </TextMaxLine>

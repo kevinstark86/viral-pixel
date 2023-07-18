@@ -34,6 +34,7 @@ import {lazyPostCSS} from "next/dist/build/webpack/config/blocks/css";
 import wordCounter from "@/utils/my-utils/wordCounter";
 import readingTime from "reading-time";
 import Gravatar from "@/components/common/gravatar/Gravatar";
+import LatestPosts from "@/components/blog/latest-posts/LatestPosts";
 
 // ----------------------------------------------------------------------
 
@@ -63,8 +64,6 @@ export const getStaticProps: GetStaticProps<{ data: BlogData }> = async ({params
 
 export default function CareerPostView({data}: InferGetStaticPropsType<typeof getStaticProps>) {
     const { favorited } =_blogCareerPosts[0];
-    // @ts-ignore
-    console.log('here is the page data', data.docs[0].author)
 
     // @ts-ignore
     const {title, content, createdAt, author, tags, description} = data.docs[0]
@@ -98,7 +97,7 @@ export default function CareerPostView({data}: InferGetStaticPropsType<typeof ge
                         <CustomBreadcrumbs
                             links={[
                                 { name: 'Home', href: '/' },
-                                { name: 'Blog', href: paths.career.posts },
+                                { name: 'Blog', href: '/blog' },
                                 { name: title },
                             ]}
                             sx={{ my: 5 }}
@@ -154,7 +153,7 @@ export default function CareerPostView({data}: InferGetStaticPropsType<typeof ge
 
             <Divider />
 
-            <BlogCareerLatestPosts posts={_blogCareerPosts.slice(0, 5)} />
+            <LatestPosts/>
 
             <NewsletterCareer />
 

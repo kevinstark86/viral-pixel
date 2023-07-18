@@ -50,7 +50,7 @@ export default function LatestPosts() {
     const viewAllBtn = (
         <Button
             component={NextLink}
-            href={paths.eLearning.posts}
+            href="/blog"
             color="inherit"
             endIcon={<Iconify icon="carbon:chevron-right" />}
         >
