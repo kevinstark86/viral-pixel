@@ -6,6 +6,7 @@ import { IAuthorProps } from '@/types/author';
 import { _socials } from '@/_mock';
 // components
 import Iconify from '@/components/common/Iconify';
+import Gravatar from "@/components/common/gravatar/Gravatar";
 
 // ----------------------------------------------------------------------
 
@@ -14,7 +15,8 @@ type Props = {
 };
 
 export default function PostAuthor({ author }: Props) {
-    const { name, role, about, quotes, picture } = author;
+    // @ts-ignore
+    const { name, role, about, quotes, picture, email } = author;
 
     return (
         <Stack
@@ -24,7 +26,7 @@ export default function PostAuthor({ author }: Props) {
                 py: { xs: 5, md: 10 },
             }}
         >
-            <Avatar src={picture} sx={{ width: 96, height: 96 }} />
+            <Gravatar email={email} size={96} />
 
             <Stack spacing={2}>
                 <Stack
@@ -37,7 +39,7 @@ export default function PostAuthor({ author }: Props) {
                         <Typography variant="h5">{name}</Typography>
 
                         <Typography variant="body2" sx={{ color: 'text.secondary' }}>
-                            {role}
+                            Founder, Digital Marketing Specialist & Software Engineer
                         </Typography>
                     </Stack>
 
@@ -51,7 +53,7 @@ export default function PostAuthor({ author }: Props) {
                 </Stack>
 
                 <Typography variant="body2" sx={{ color: 'text.secondary' }}>
-                    {about}
+                    A seasoned Digital Marketing Expert and Software Engineer, I bring a potent blend of technical skills and marketing acumen to the table. With over 15 years of experience in the digital ad tech landscape, I have honed my ability to design and develop robust high converting websites and apps that integrate seamlessly with the latest advertising platforms.
                 </Typography>
 
                 <Typography variant="caption" sx={{ color: 'text.disabled' }}>

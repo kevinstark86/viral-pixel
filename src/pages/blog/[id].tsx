@@ -1,3 +1,4 @@
+import type {InferGetStaticPropsType, GetStaticProps, GetStaticPaths} from "next";
 import { useState } from 'react';
 // @mui
 import {
@@ -24,19 +25,52 @@ import { _blogCareerPosts, _socials } from '@/_mock';
 import Iconify from '@/components/common/Iconify';
 import Markdown from '@/components/common/markdown';
 import CustomBreadcrumbs from '@/components/common/custom-breadcrumbs';
+import TextParser from "@/utils/text-parser/TextParser";
 //
 import NewsletterCareer from '@/components/newsletter/career';
 import { BlogCareerLatestPosts } from '@/components/blog/career';
 import { PostTags, PostAuthor, PostTimeBlock, PostSocialsShare } from '@/components/blog/components';
+import {lazyPostCSS} from "next/dist/build/webpack/config/blocks/css";
+import wordCounter from "@/utils/my-utils/wordCounter";
+import readingTime from "reading-time";
+import Gravatar from "@/components/common/gravatar/Gravatar";
 
 // ----------------------------------------------------------------------
 
-
+type BlogData = {
+    docs: []
+}
 CareerPostView.getLayout = (page: React.ReactElement) => <MainLayout>{page}</MainLayout>
 
-export default function CareerPostView() {
-    const { title, description, duration, createdAt, favorited, author, tags, content } =
-        _blogCareerPosts[0];
+export const getStaticPaths: GetStaticPaths = async () => {
+    const res = await fetch('https://payload-cms-test-production.up.railway.app/api/posts')
+    const data: BlogData = await res.json()
+
+    const paths = data.docs.map((post) => ({
+        // @ts-ignore
+        params: {id: post.urlSlug},
+    }));
+    return {paths, fallback: 'blocking'}
+
+}
+
+export const getStaticProps: GetStaticProps<{ data: BlogData }> = async ({params}) => {
+    const res = await fetch(`https://payload-cms-test-production.up.railway.app/api/posts?where[urlSlug][equals]=${params?.id}`)
+    const data = await res.json()
+    return {props: {data}}
+
+}
+
+export default function CareerPostView({data}: InferGetStaticPropsType<typeof getStaticProps>) {
+    const { favorited } =_blogCareerPosts[0];
+    // @ts-ignore
+    console.log('here is the page data', data.docs[0].author)
+
+    // @ts-ignore
+    const {title, content, createdAt, author, tags, description} = data.docs[0]
+
+    const stats = wordCounter(content)
+    const time = readingTime(stats)
 
     const [favorite, setFavorite] = useState(favorited);
 
@@ -75,12 +109,13 @@ export default function CareerPostView() {
                         </Typography>
 
                         <Stack direction="row" justifyContent="space-between" spacing={1.5} sx={{ my: 5 }}>
-                            <Avatar src={author.picture} sx={{ width: 48, height: 48 }} />
+                            <Gravatar email={author.email} size={48} />
+
 
                             <Stack spacing={0.5} flexGrow={1}>
                                 <Typography variant="subtitle2">{author.name}</Typography>
 
-                                <PostTimeBlock createdAt={fDate(createdAt)} duration={duration} />
+                                <PostTimeBlock createdAt={fDate(createdAt)} duration={time.text} />
                             </Stack>
 
                             <Stack direction="row" alignItems="center">
@@ -102,7 +137,9 @@ export default function CareerPostView() {
                             {description}
                         </Typography>
 
-                        <Markdown content={content} firstLetter />
+                        <TextParser content={content}/>
+
+
 
                         <PostTags tags={tags} />
 

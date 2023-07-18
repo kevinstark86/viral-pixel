@@ -4,9 +4,12 @@ import { Chip, Stack, Typography } from '@mui/material';
 import { IBlogTagsProps } from '@/types/blog';
 
 // ----------------------------------------------------------------------
-
+type tagData = {
+    id: string,
+    name: string,
+}
 type Props = {
-    tags: IBlogTagsProps[];
+    tags: tagData[];
 };
 
 export default function PostTags({ tags }: Props) {
@@ -17,7 +20,7 @@ export default function PostTags({ tags }: Props) {
             </Typography>
 
             {tags.map((tag) => (
-                <Chip key={tag.label} size="small" label={tag.label} sx={{ m: 0.5 }} onClick={() => {}} />
+                <Chip key={tag.name} size="small" label={tag.name} sx={{ m: 0.5 }} onClick={() => {}} />
             ))}
         </Stack>
     );
