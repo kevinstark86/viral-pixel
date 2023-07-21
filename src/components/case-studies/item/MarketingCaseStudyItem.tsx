@@ -5,7 +5,7 @@ import { Stack, Typography, Link } from '@mui/material';
 // routes
 import { paths } from '@/routes/paths';
 // types
-import { ICaseStudyProps } from '@/types/case-study';
+import {SingleCaseStudy} from "@/types/my-types/case-studies";
 // components
 import Image from '@/components/common/Image';
 import TextMaxLine from '@/components/common/text-max-line';
@@ -13,24 +13,25 @@ import TextMaxLine from '@/components/common/text-max-line';
 // ----------------------------------------------------------------------
 
 type Props = {
-  project: ICaseStudyProps;
+  project: SingleCaseStudy;
 };
 
 export default function MarketingCaseStudyItem({ project }: Props) {
-  const { title, coverImg, category } = project;
+  const { clientName, featuredImage:{url}, category, urlSlug } = project;
+  const urlPath = '/case-studies/urlSlug'
 
   return (
     <div>
-      <Image src={coverImg} alt={title} ratio="1/1" sx={{ borderRadius: 2 }} />
+      <Image src={url} alt={clientName} ratio="1/1" sx={{ borderRadius: 2 }} />
 
       <Stack spacing={1} sx={{ pt: 2.5, px: 2.5 }}>
         <Typography variant="overline" sx={{ color: 'text.disabled' }}>
-          {category}
+          {category.name}
         </Typography>
 
-        <Link component={NextLink} href={paths.marketing.caseStudy} color="inherit">
+        <Link component={NextLink} href={urlPath} color="inherit">
           <TextMaxLine variant="h5" line={1}>
-            {title}
+            {clientName}
           </TextMaxLine>
         </Link>
       </Stack>

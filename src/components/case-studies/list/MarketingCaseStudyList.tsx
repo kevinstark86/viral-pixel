@@ -6,6 +6,8 @@ import { ICaseStudyProps } from '@/types/case-study';
 //
 import MarketingCaseStudyItem from '../item';
 
+import {useGetAllCaseStudiesQuery} from "@/redux/services/blogPosts";
+
 // ----------------------------------------------------------------------
 
 type Props = {
@@ -14,6 +16,9 @@ type Props = {
 
 export default function MarketingCaseStudyList({ caseStudies }: Props) {
   const [tab, setTab] = useState('All');
+  const [pageNumber, setPageNumber] = useState(1);
+
+  const {data, error, isLoading} = useGetAllCaseStudiesQuery(pageNumber)
 
   const getCategories = caseStudies.map((project) => project.category);
 
@@ -52,7 +57,7 @@ export default function MarketingCaseStudyList({ caseStudies }: Props) {
           },
         }}
       >
-        {filtered.map((project) => (
+        {data?.docs.map((project) => (
           <MarketingCaseStudyItem key={project.id} project={project} />
         ))}
       </Box>

@@ -1,4 +1,5 @@
 import {createApi, fetchBaseQuery} from "@reduxjs/toolkit/query/react";
+import {CaseStudies} from "@/types/my-types/case-studies";
 
 type Categories = {
     id: string,
@@ -64,9 +65,25 @@ export const blogPostsApi = createApi({
         }),
         getSinglePost: builder.query<Posts, string>({
             query: (urlSlug) => `posts?where[urlSlug][equals]=${urlSlug}`
+        }),
+        getAllCaseStudies: builder.query<CaseStudies, number>({
+            query: (page= 1) => `case-studies?limit=6&page=${page}`
+        }),
+        getSingleCaseStudy: builder.query<CaseStudies, string>({
+            query: (urlSlug) => `case-studies?where[urlSlug][equals]=${urlSlug}`
         })
         
     })
 })
 
-export const {useGetAllPostsQuery, useGetPostsByTagQuery, useGetAllTagsQuery, useGetAllCategoriesQuery, useGetPopularGuidesQuery, useGetLatestPostsQuery, useGetSinglePostQuery} = blogPostsApi;
+export const {
+    useGetAllPostsQuery,
+    useGetPostsByTagQuery,
+    useGetAllTagsQuery,
+    useGetAllCategoriesQuery,
+    useGetPopularGuidesQuery,
+    useGetLatestPostsQuery,
+    useGetSinglePostQuery,
+    useGetAllCaseStudiesQuery,
+    useGetSingleCaseStudyQuery,
+} = blogPostsApi;
