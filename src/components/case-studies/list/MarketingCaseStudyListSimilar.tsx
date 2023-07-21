@@ -12,11 +12,12 @@ import { ICaseStudyProps } from '@/types/case-study';
 import Iconify from '@/components/common/Iconify';
 //
 import MarketingCaseStudyItem from '../item';
+import {CaseStudies} from "@/types/my-types/case-studies";
 
 // ----------------------------------------------------------------------
 
 type Props = {
-  caseStudies: ICaseStudyProps[];
+  caseStudies: CaseStudies;
 };
 
 export default function MarketingCaseStudyListSimilar({ caseStudies }: Props) {
@@ -33,7 +34,9 @@ export default function MarketingCaseStudyListSimilar({ caseStudies }: Props) {
     </Button>
   );
 
-  return (
+  // @ts-ignore
+    // @ts-ignore
+    return (
     <Container
       sx={{
         py: { xs: 10, md: 15 },
@@ -63,8 +66,8 @@ export default function MarketingCaseStudyListSimilar({ caseStudies }: Props) {
           },
         }}
       >
-        {caseStudies.map((project) => (
-          <MarketingCaseStudyItem key={project.id} project={project} />
+        {caseStudies.docs.map((project, index) => (
+          <MarketingCaseStudyItem key={index} project={project} />
         ))}
       </Box>
 
