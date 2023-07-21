@@ -18,7 +18,7 @@ type Props = {
 
 export default function MarketingCaseStudyItem({ project }: Props) {
   const { clientName, featuredImage:{url}, category, urlSlug } = project;
-  const urlPath = '/case-studies/urlSlug'
+  const urlPath = `/case-studies/${urlSlug}`
 
   return (
     <div>
