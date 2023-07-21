@@ -22,8 +22,8 @@ import TextParser from "@/utils/text-parser/TextParser";
 const _mockCaseStudy = _caseStudies[0];
 
 
-export default function CaseStudy(props: CaseStudies[]) {
-    console.log('here are the props', props)
+export default function CaseStudy(props: CaseStudies) {
+    const {featuredImage:{url}, content, gallery, clientName} = props.docs[0]
     return (
         <>
             <Container
@@ -33,32 +33,32 @@ export default function CaseStudy(props: CaseStudies[]) {
                     pb: { xs: 10, md: 15 },
                 }}
             >
-                <Image alt="hero" src="https://d2heqyrbhzqlev.cloudfront.net/neom-ckfXPMb2_BI-unsplash.jpg" ratio="16/9" sx={{ borderRadius: 2 }} />
+                <Image alt="hero" src={url} ratio="16/9" sx={{ borderRadius: 2 }} />
 
                 <CustomBreadcrumbs
                     sx={{ my: 5 }}
                     links={[
                         { name: 'Home', href: '/' },
                         { name: 'Case Studies', href: '/case-studies' },
-                        { name: 'AquaHeat' },
+                        { name: clientName },
                     ]}
                 />
 
                 <Grid container spacing={{ xs: 5, md: 8 }} direction={{ md: 'row-reverse' }}>
                     <Grid xs={12} md={4}>
-                        <MarketingCaseStudyDetailsSummary caseStudy={_caseStudies[0]} />
+                        <MarketingCaseStudyDetailsSummary caseStudy={props} />
                     </Grid>
 
                     <Grid xs={12} md={8}>
-                        ///
-                        <MarketingCaseStudyDetailsGallery images={_mockCaseStudy.galleryImgs} />
+                        <TextParser content={content}/>
+                        <MarketingCaseStudyDetailsGallery images={gallery} />
                     </Grid>
                 </Grid>
             </Container>
 
             <HomeTestimonial testimonials={_testimonials} />
 
-            <MarketingCaseStudyListSimilar caseStudies={_caseStudies.slice(0, 3)} />
+
 
         </>
     );

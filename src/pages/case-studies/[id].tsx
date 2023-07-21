@@ -1,5 +1,5 @@
-import {GetServerSideProps, InferGetServerSidePropsType} from "next";
-import {CaseStudies} from "@/types/my-types/case-studies";
+import {GetStaticProps, GetStaticPaths, InferGetStaticPropsType} from "next";
+import {CaseStudies, SingleCaseStudy} from "@/types/my-types/case-studies";
 import CaseStudy from "@/components/case-study/CaseStudy";
 import MainLayout from "@/layouts/main";
 
@@ -7,18 +7,24 @@ import MainLayout from "@/layouts/main";
 
 SingleCaseStudy.getLayout = (page: React.ReactElement) => <MainLayout>{page}</MainLayout>
 
-export const getServerSideProps: GetServerSideProps<{data: CaseStudies}> = async (context) => {
-    const {id} = context.params as {id: string}
-    const res = await fetch(`https://payload-cms-test-production.up.railway.app/api/case-studies?where[urlSlug][equals]=${id}`)
+export const getStaticPaths: GetStaticPaths = async () => {
+    const res = await fetch('https://payload-cms-test-production.up.railway.app/api/case-studies')
     const data = await res.json();
-    return {props: {data}}
+    const paths = data.docs.map((item: SingleCaseStudy) => ({params: {id: item.urlSlug}}))
+    return {paths, fallback: 'blocking'}
 }
 
-export default function SingleCaseStudy({data}: InferGetServerSidePropsType<typeof getServerSideProps>) {
-    console.log('here is the data', data.docs)
+export const getStaticProps: GetStaticProps = async ({params}) => {
+    const res = await fetch(`https://payload-cms-test-production.up.railway.app/api/case-studies?where[urlSlug][equals]=${params?.id}`)
+    const data = await res.json()
+    return {props: data}
+}
+
+export default function SingleCaseStudy(data: InferGetStaticPropsType<typeof getStaticProps>) {
     return (
         <>
-            <h1>hello</h1>
+            {/* @ts-ignore */}
+            <CaseStudy {...data}/>
         </>
     )
 }

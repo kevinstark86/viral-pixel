@@ -8,15 +8,16 @@ import { ICaseStudyProps } from '@/types/case-study';
 import { _socials } from '@/_mock';
 // components
 import Iconify from '@/components/common/Iconify';
+import {CaseStudies} from "@/types/my-types/case-studies";
 
 // ----------------------------------------------------------------------
 
 type Props = {
-  caseStudy: ICaseStudyProps;
+  caseStudy: CaseStudies;
 };
 
 export default function MarketingCaseStudyDetailsSummary({ caseStudy }: Props) {
-  const { title, description, category, website, createdAt } = caseStudy;
+  const { clientName, clientSummary, category, clientWebsite, createdAt } = caseStudy.docs[0];
 
   return (
     <Stack spacing={3} sx={{ p: 5, borderRadius: 2, bgcolor: 'background.neutral' }}>
@@ -25,9 +26,9 @@ export default function MarketingCaseStudyDetailsSummary({ caseStudy }: Props) {
           summary
         </Typography>
 
-        <Typography variant="h6">{title}</Typography>
+        <Typography variant="h6">{clientName}</Typography>
 
-        <Typography variant="body2">{description}</Typography>
+        <Typography variant="body2">{clientSummary}</Typography>
       </Stack>
 
       <Divider sx={{ borderStyle: 'dashed' }} />
@@ -38,7 +39,7 @@ export default function MarketingCaseStudyDetailsSummary({ caseStudy }: Props) {
         </Typography>
 
         <Link variant="body2" color="inherit">
-          {website}
+          {clientWebsite}
         </Link>
 
         <Typography variant="overline" sx={{ color: 'text.disabled', pt: 1 }}>
@@ -46,7 +47,7 @@ export default function MarketingCaseStudyDetailsSummary({ caseStudy }: Props) {
         </Typography>
 
         <Typography variant="body2" sx={{ pb: 1 }}>
-          {category}
+          {category.name}
         </Typography>
 
         <Typography variant="overline" sx={{ color: 'text.disabled' }}>

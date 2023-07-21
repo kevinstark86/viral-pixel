@@ -1,5 +1,9 @@
-type GalleryImg = {
+type Images = {
     url: string,
+}
+
+export type GalleryImg = {
+    image: Images,
 }
 
 type CsCategory = {

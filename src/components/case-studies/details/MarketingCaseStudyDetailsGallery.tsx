@@ -8,11 +8,11 @@ import Image from '@/components/common/Image';
 import Lightbox, { useLightBox } from '@/components/common/lightbox';
 import Carousel, { CarouselArrows } from '@/components/common/Carousel';
 import { varHover, varTranHover } from '@/components/animate';
-
+import {GalleryImg} from "@/types/my-types/case-studies";
 // ----------------------------------------------------------------------
 
 type Props = {
-  images: string[];
+  images: GalleryImg[];
 };
 
 export default function MarketingCaseStudyDetailsGallery({ images }: Props) {
@@ -20,8 +20,9 @@ export default function MarketingCaseStudyDetailsGallery({ images }: Props) {
 
   const carouselRef = useRef<Carousel | null>(null);
 
+  // @ts-ignore
   const slides = images.map((slide) => ({
-    src: slide,
+    src: slide.image.url,
   }));
 
   const {
@@ -72,9 +73,9 @@ export default function MarketingCaseStudyDetailsGallery({ images }: Props) {
       </Stack>
 
       <Carousel ref={carouselRef} {...carouselSettings}>
-        {slides.map((slide) => (
+        {slides.map((slide, index) => (
           <Box
-            key={slide.src}
+            key={index}
             component={m.div}
             whileHover="hover"
             sx={{ px: 1 }}
